@@ -1,0 +1,92 @@
+# //========================
+# // Maze Qore Arena
+# //========================
+#
+# This file tells Git about engine files that never truly belong in source control.  They are usually build products, log
+# files and intermediate files generated from a compiler or the engine runtime.
+#
+#
+# NOTE:
+#  Paths that start with / match paths relative to the root (where the .gitignore file is)
+#  Paths that end with / will match a folder and all files under it (but not a regular file with no extension)
+#  Use * for wildcards.  Wildcards stop at path separators
+#  Use ** for a wildcard that spans path separators
+#  Paths in this file should use forward slash characters, not back slashes
+#  Use \ to escape special characters like ! and #
+#  Use ! to negate a previous pattern.  But it doesn't work if the parent sub-folder was masked out already.
+#
+
+
+# Ignore all files by default, but scan all directories except for the 'Intermediate' (sans Config), 'Binaries', and 'Saved' (sans Config) folders.
+*
+!*/
+!/Intermediate/Config/**
+!/Saved/Config/Windows/**
+
+# Ignore not git files in the root of the repo.
+!/.git*
+
+# Ignore not project's `.uproject`.
+!/*.uproject
+
+# Ignore not project's `GameIcon.png` project thumbnail.
+!/MQA_MP.png
+
+# Ignore not plugins.
+!/Plugins/**
+
+# Ignore not build icons.
+!/Build/Windows/Application.ico
+!/Build/Linux/Application.png
+
+# Ignore not project's `.md` files e.g. README, etc.
+!/*.md
+
+# Ignore not project folder info `.txt` files.
+!/Source/*.txt
+!/Config/*.txt
+!/Content/*.txt
+
+# Ignore not project's `EdSplash.bmp` and 'Splash.bmp'.
+!/Content/Splash/*.bmp
+
+# Ignore not source and config dirs.
+!/Source/**
+!/Config/**
+
+# Only allow .uasset and .umap files from /Content dir.
+# They're tracked by git-lfs, don't forget to track other
+# files if adding them here.
+!/Content/**/*.uasset
+!/Content/**/*.umap
+
+# Allow any files from /RawContent dir.
+# Any file in /RawContent dir will be managed by git lfs.
+!/RawContent/**/*
+
+# OS/platform generated files.
+
+# Windows
+ehthumbs.db
+Thumbs.db
+
+# Mac OS X
+.DS_Store
+.DS_Store?
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+*~
+.directory
+
+# vim
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+
+# Visual Studio
+.vs
